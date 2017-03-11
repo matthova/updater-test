@@ -6,12 +6,12 @@
   </head>
   <body>
     <p>Foo</p>
-    <form action="/update" id="version-form">
+    <form action="/update" method="POST" id="version-form">
       <input type="submit" value="update">
     </form>
     <select name="version" form="version-form">
       <% for (var i = 0; i < tags.length; i++) { %>
-        <option selected="<%= version === tags[i].sha ? 'selected' : '' %>" value="<%= tags[i].sha %>"><%= tags[i].version %></option>
+        <option selected="<%= version === tags[i].sha ? 'selected' : '' %>" value="<%= tags[i].sha.split('\r\n')[0] %>"><%= tags[i].version %></option>
       <% } %>
     </select>
   </body>
