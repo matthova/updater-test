@@ -11,7 +11,7 @@
     </form>
     <select name="version" form="version-form">
       <% for (var i = 0; i < tags.length; i++) { %>
-        <option selected="<%= version === tags[i].sha ? 'selected' : '' %>" value="<%= tags[i].sha.split('\r\n')[0] %>"><%= tags[i].version %></option>
+        <option selected="<%= version === tags[i].sha ? 'selected' : '' %>" value="<%= tags[i].sha %>"><%= tags[i].tag %></option>
       <% } %>
     </select>
   </body>
